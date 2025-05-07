@@ -1,6 +1,5 @@
 const http = require('http');
 
-// Define routes
 const routes = {
   '/saludo': (res) => {
     res.end('Hola Grupo de Diseno y desarrollo de APIs.\n');
