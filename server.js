@@ -10,7 +10,12 @@ const routes = {
     res.end(`La hora actual es: ${now.toLocaleTimeString()}\n`);
   },
   '/': (res) => {
-    res.end('hola mundo\n');
+    res.end('20235722-Melissa Torres\n' +
+      '20235760-Diego Cabezas\n' +
+      '20235918-Julio Contreras\n' +
+      '20235787-Christian Sanchez\n' +
+
+    );
   }
 };
 
