@@ -1,12 +1,27 @@
 const http = require('http');
 
+// Define routes
+const routes = {
+  '/saludo': (res) => {
+    res.end('Hola Grupo de Diseno y desarrollo de APIs.\n');
+  },
+  '/hora': (res) => {
+    const now = new Date();
+    res.end(`La hora actual es: ${now.toLocaleTimeString()}\n`);
+  },
+  '/': (res) => {
+    res.end('hola mundo\n');
+  }
+};
+
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('hola mundo\n');
+  const url = req.url;
+  
+  const handler = routes[url] || routes['/'];
+  handler(res);
 });
 
-const port = 3000;
+const port = 3004;
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(`http://localhost:${port}/`);
 }); 
